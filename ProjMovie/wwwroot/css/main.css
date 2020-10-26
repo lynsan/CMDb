@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+body{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background: #0f0f0f;
+    padding: 0;
+    margin: 0;
+}
+header{
+    color: white;
+    display: flex;
+    padding: 10px;
+}
+
+
+.search-box {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #2f3640;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search-box:hover > .search-txt{
+    width: 200px;
+}
+.search-box:hover > .search-btn{
+    background: white;
+}
+
+
+.search-btn{
+    color: rgb(68, 10, 37);
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+
+
+.top-movie{
+    width: 75%;
+    position: relative;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.top-movie img{
+    width: 100%;
+}
+
+.top-movie .info{
+    color: rgba(68, 10, 37, 0);
+    background: rgba(75, 6, 27, 0);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.35s;
+}
+
+.top-movie:hover .info {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(75, 6, 27, 0.8);
+}
+
+.top-movie .info .info-text{
+    margin: 0;
+    margin-top: 50%;
+    font-size: 30px;
+}
