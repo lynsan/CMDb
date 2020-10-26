@@ -29,11 +29,12 @@ namespace ProjMovie
 
             app.UseRouting();
 
+            //Info om endpoints: https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-3.1
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller = Home}/{action=Index}/{id?}"
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
             });
         }
