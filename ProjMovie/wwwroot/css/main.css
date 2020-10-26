@@ -92,3 +92,13 @@ header{
     margin-top: 50%;
     font-size: 30px;
 }
+
+.topmovies-flex-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10% 10%;
+}
+
+.topmovies-flex-container img{
+    width: 20%;
+}
