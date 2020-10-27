@@ -8,6 +8,6 @@ namespace ProjMovie.Data
 {
     public interface IMovieRepository
     {
-        Task<MovieDTO> GetMovie();
+        Task<MovieDTO> GetMovie(string movID);
     }
 }

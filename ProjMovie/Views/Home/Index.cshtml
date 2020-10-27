@@ -1,4 +1,4 @@
-﻿@model ProjMovie.Models.DTO.MovieDTO
+﻿@model List<ProjMovie.Models.DTO.MovieDTO>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,26 +21,26 @@
 		</a>
 	</div>
 	<a href="/Detail/Index" class="movie-link">
-		<h1 class="top-movie-title">@Model.Title</h1>
+		<h1 class="top-movie-title">@Model[0].Title</h1>
 	</a>
 		<div class="top-movie">
             <a href="/Detail/Index" class="movie-link">
-				<img src="@Model.Poster" alt="Top Movie">
+				<img src="@Model[0].Poster" alt="Top Movie">
 				<div class="info">
 					<div class="info-text">
-						<h2>@Model.Title</h2>
-						<p>@Model.Plot</p>
+						<h2>@Model[0].Title</h2>
+						<p>@Model[0].Plot</p>
 					</div>
 				</div>
 			</a>
 		</div>
 	<ul class="movie-list">
 		<li>
-            <a href="Detail/Index">
-				<img src="/Images/poster.jpg" alt="poster">
+            <a href="Detail/Index/@Model[1].ImdbID">
+				<img src="@Model[1].Poster" alt="poster">
 				<div class="info">
 					<div class="info-text">
-						<h2>Movie Title</h2>
+						<h2>@Model[1].Title</h2>
 						<p>more info bla bla</p>
 					</div>
 				</div>
@@ -48,10 +48,10 @@
 		</li>
 		<li>
             <a href="Detail/Index">
-                <img src="/Images/poster.jpg" alt="poster">
+                <img src="@Model[2].Poster" alt="poster">
                 <div class="info">
                     <div class="info-text">
-                        <h2>Movie Title</h2>
+                        <h2>@Model[2].Title</h2>
                         <p>more info bla bla</p>
                     </div>
                 </div>
@@ -59,10 +59,10 @@
 		</li>
         <li>
             <a href="Detail/Index">
-				<img src="/Images/poster.jpg" alt="poster">
+				<img src="@Model[3].Poster" alt="poster">
 				<div class="info">
 					<div class="info-text">
-						<h2>Movie Title</h2>
+						<h2>@Model[3].Title</h2>
 						<p>more info bla bla</p>
 					</div>
 				</div>

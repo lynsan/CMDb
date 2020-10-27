@@ -21,13 +21,12 @@ namespace ProjMovie.Data
             apiKey = configuration.GetValue<string>("OMDbApi:ApiKey");
         }
 
-        public async Task<MovieDTO> GetMovie()
+        public async Task<MovieDTO> GetMovie(string MovID)
         {
-
+            
             using (HttpClient client = new HttpClient())
             {
-                string endpoint = $"{baseUrl}?i=tt0918940{apiKey}";
-                //TODO: se till att urlen tar in id. Nu är den hårdkodad i urlen
+                string endpoint = $"{baseUrl}?i={MovID}{apiKey}";
                 var response = await client.GetAsync(endpoint, HttpCompletionOption.ResponseHeadersRead);
                 response.EnsureSuccessStatusCode();
                 var data = await response.Content.ReadAsStringAsync();

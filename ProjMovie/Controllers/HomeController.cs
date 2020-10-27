@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProjMovie.Data;
+using ProjMovie.Models.DTO;
 
 namespace ProjMovie.Controllers
 {
@@ -18,8 +19,26 @@ namespace ProjMovie.Controllers
         
         public async Task<IActionResult> Index()
         {
-            var model = await movieRepository.GetMovie();
+            var model = await GetMovieList(GetRatedMovies());
             return View(model);
+        }
+
+        private async Task<List<MovieDTO>> GetMovieList(String[] array)
+        {
+            List<MovieDTO> movList = new List<MovieDTO>();
+            for (int i = 0; i < array.Length; i++)
+            {
+                var item = await movieRepository.GetMovie(array[i]);
+                movList.Add(item);
+            }
+            return movList;
+        }
+
+        private string[] GetRatedMovies()
+        {
+            //TODO: Hämta topp tre id från CMDb
+            string[] mock = {"tt3731562", "tt10048342", "tt12298506", "tt1735898"};
+            return mock;
         }
     }
 }
