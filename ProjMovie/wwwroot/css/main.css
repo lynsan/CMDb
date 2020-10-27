@@ -14,6 +14,15 @@ header {
     padding: 10px;
 }
 
+.movie-link {
+    text-decoration: none;
+}
+
+.movie-link:hover {
+    text-decoration: underline;
+    color: white;
+}
+
 .content-wrapper {
     min-height: 100vh;
 }

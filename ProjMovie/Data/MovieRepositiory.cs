@@ -13,10 +13,12 @@ namespace ProjMovie.Data
     public class MovieRepositiory : IMovieRepository
     {
         private string baseUrl;
+        private string apiKey;
 
         public MovieRepositiory(IConfiguration configuration)
         {
             baseUrl = configuration.GetValue<string>("OMDbApi:BaseUrl");
+            apiKey = configuration.GetValue<string>("OMDbApi:ApiKey");
         }
 
         public async Task<MovieDTO> GetMovie()
@@ -24,7 +26,7 @@ namespace ProjMovie.Data
 
             using (HttpClient client = new HttpClient())
             {
-                string endpoint = $"{baseUrl}?i=tt0918940&apikey=aa247f46";
+                string endpoint = $"{baseUrl}?i=tt0918940{apiKey}";
                 //TODO: se till att urlen tar in id. Nu är den hårdkodad i urlen
                 var response = await client.GetAsync(endpoint, HttpCompletionOption.ResponseHeadersRead);
                 response.EnsureSuccessStatusCode();
