@@ -10,43 +10,43 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
-	<header>
-		<h1>CMDb</h1>
-	</header>
+    <header>
+        <h1>CMDb</h1>
+    </header>
 
-	<div class="search-box">
-		<input class="search-txt" type="text" placeholder="Search">
-		<a class="search-btn" href="#">
-			<i class="fas fa-search"></i>
-		</a>
-	</div>
-	<a href="/Detail/Index" class="movie-link">
-		<h1 class="top-movie-title">@Model[0].Title</h1>
-	</a>
-		<div class="top-movie">
-            <a href="/Detail/Index" class="movie-link">
-				<img src="@Model[0].Poster" alt="Top Movie">
-				<div class="info">
-					<div class="info-text">
-						<h2>@Model[0].Title</h2>
-						<p>@Model[0].Plot</p>
-					</div>
-				</div>
-			</a>
-		</div>
-	<ul class="movie-list">
-		<li>
+    <div class="search-box">
+        <input class="search-txt" type="text" placeholder="Search">
+        <a class="search-btn" href="#">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+    <a href="/Detail/Index" class="movie-link">
+        <h1 class="top-movie-title">@Model[0].Title</h1>
+    </a>
+    <div class="top-movie">
+        <a href="/Detail/Index" class="movie-link">
+            <img src="@Model[0].Poster" alt="Top Movie">
+            <div class="info">
+                <div class="info-text">
+                    <h2>@Model[0].Title</h2>
+                    <p>@Model[0].Plot</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <ul class="movie-list">
+        <li>
             <a href="Detail/Index/@Model[1].ImdbID">
-				<img src="@Model[1].Poster" alt="poster">
-				<div class="info">
-					<div class="info-text">
-						<h2>@Model[1].Title</h2>
-						<p>more info bla bla</p>
-					</div>
-				</div>
-			</a>
-		</li>
-		<li>
+                <img src="@Model[1].Poster" alt="poster">
+                <div class="info">
+                    <div class="info-text">
+                        <h2>@Model[1].Title</h2>
+                        <p>more info bla bla</p>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
             <a href="Detail/Index">
                 <img src="@Model[2].Poster" alt="poster">
                 <div class="info">
@@ -56,20 +56,30 @@
                     </div>
                 </div>
             </a>
-		</li>
+        </li>
         <li>
             <a href="Detail/Index">
-				<img src="@Model[3].Poster" alt="poster">
-				<div class="info">
-					<div class="info-text">
-						<h2>@Model[3].Title</h2>
-						<p>more info bla bla</p>
-					</div>
-				</div>
+                <img src="@Model[3].Poster" alt="poster">
+                <div class="info">
+                    <div class="info-text">
+                        <h2>@Model[3].Title</h2>
+                        <p>more info bla bla</p>
+                    </div>
+                </div>
             </a>
         </li>
 
-	</ul>
+    </ul>
+    <footer>
+        <section>
+            <ul class="social">
+                <li><a href="#"> <img src="Images/facebook.png"></a></li>
+                <li><a href="#"> <img src="Images/instagram.png"></a></li>
+                <li><a href="#"> <img src="Images/twitter.png"></a></li>
+            </ul>
+        </section>
+        <p><b>&copy; 2020 CMDb</b></p>
+    </footer>
 
 </body>
 </html>
