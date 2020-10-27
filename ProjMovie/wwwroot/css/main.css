@@ -84,31 +84,31 @@ header {
     margin-bottom: 40px;
 }
 
-    .top-movie img, .movie-list li img {
-        width: 100%;
-    }
+.top-movie img, .movie-list li img {
+    width: 100%;
+}
 
-    .top-movie .info, .movie-list li .info {
-        color: rgba(68, 10, 37, 0);
-        background: rgba(75, 6, 27, 0);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        transition: all 0.35s;
-    }
+.top-movie .info, .movie-list li .info {
+    color: rgba(68, 10, 37, 0);
+    background: rgba(75, 6, 27, 0);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.35s;
+}
 
-    .top-movie:hover .info, .movie-list li:hover .info, .top-movie:active .info, .movie-list li:active .info {
-        color: rgba(255, 255, 255, 1);
-        background: rgba(75, 6, 27, 0.8);
-    }
+.top-movie:hover .info, .movie-list li:hover .info, .top-movie:active .info, .movie-list li:active .info {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(75, 6, 27, 0.8);
+}
 
-    .top-movie .info .info-text {
-        margin: 0;
-        margin-top: 50%;
-        font-size: 30px;
-    }
+.top-movie .info .info-text {
+    margin: 0;
+    margin-top: 40%;
+    font-size: 28px;
+}
 
 .movie-list {
     display: flex;
@@ -135,7 +135,7 @@ header {
     .movie-list li {
         font-size: 12px;
         flex-basis: 30%;
-        max-width: calc(50% - 14px);
+        max-width: calc(30% - 14px);
         margin: 7px;
         flex-grow: 1;
         position: relative;
