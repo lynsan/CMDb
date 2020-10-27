@@ -152,12 +152,13 @@ header {
 
 footer {
     color: #fff;
-    background: #0f0f0f;
+    background: black;
     width: 100%;
     text-align: center;
     overflow: hidden;
     bottom: 0;
     padding: 10px;
+    opacity: 0.7;
 }
 
 ul.social li {
