@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model ProjMovie.Models.DTO.MovieDTO
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>CMDB movieProject</title>
@@ -19,13 +21,13 @@
 		</a>
 	</div>
 
-	<h1 class="top-movie-title">title of the movie</h1>
+	<h1 class="top-movie-title">@Model.Title</h1>
 	<div class="top-movie">
-		<img src="Images/poster.jpg" alt="Top Movie">
+		<img src="@Model.Poster" alt="Top Movie">
 		<div class="info">
 			<div class="info-text">
-				<h2>Movie Title</h2>
-				<p>more info bla bla</p>
+				<h2>@Model.Title</h2>
+				<p>@Model.Plot</p>
 			</div>
 		</div>
 	</div>
