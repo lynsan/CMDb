@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 
-body{
+body {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     background: #0f0f0f;
     padding: 0;
     margin: 0;
 }
-header{
+
+header {
     color: white;
     display: flex;
     padding: 10px;
 }
 
+.content-wrapper {
+    min-height: 100vh;
+}
 
+
+/*SEARCH BAR STYLING*/
 .search-box {
     position: absolute;
     left: 50%;
@@ -63,49 +69,79 @@ header{
 }
 
 
-.top-movie{
+/*TOP MOVIE STYLING*/
+.top-movie-title {
+    margin-top: 90px;
+    margin-bottom: 0;
+    color: white;
+}
+
+.top-movie {
     width: 75%;
     position: relative;
     margin: auto;
-    margin-top: 90px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
-.top-movie img{
-    width: 100%;
-}
+    .top-movie img, .movie-list li img {
+        width: 100%;
+    }
 
-.top-movie .info{
-    color: rgba(68, 10, 37, 0);
-    background: rgba(75, 6, 27, 0);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: all 0.35s;
-}
+    .top-movie .info, .movie-list li .info {
+        color: rgba(68, 10, 37, 0);
+        background: rgba(75, 6, 27, 0);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all 0.35s;
+    }
 
-.top-movie:hover .info {
-    color: rgba(255, 255, 255, 1);
-    background: rgba(75, 6, 27, 0.8);
-}
+    .top-movie:hover .info, .movie-list li:hover .info, .top-movie:active .info, .movie-list li:active .info {
+        color: rgba(255, 255, 255, 1);
+        background: rgba(75, 6, 27, 0.8);
+    }
 
-.top-movie .info .info-text{
-    margin: 0;
-    margin-top: 50%;
-    font-size: 30px;
-}
+    .top-movie .info .info-text {
+        margin: 0;
+        margin-top: 50%;
+        font-size: 30px;
+    }
 
-.topmovies-flex-container {
+.movie-list {
     display: flex;
     flex-direction: row;
-    margin: 10% 10%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 20px;
+    margin: auto;
+    max-width: 1200px;
 }
 
-.topmovies-flex-container img{
-    width: 20%;
-}
+    .movie-list li .info .info-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
 
+        .movie-list li .info .info-text * {
+            padding: 0 5px;
+        }
+
+    .movie-list li {
+        font-size: 12px;
+        flex-basis: 30%;
+        max-width: calc(50% - 14px);
+        margin: 7px;
+        flex-grow: 1;
+        position: relative;
+    }
+
+/*MEDIA QUERIES*/
 @media only screen and (min-width: 768px) {
     .search-box:hover > .search-txt {
         width: 240px;
