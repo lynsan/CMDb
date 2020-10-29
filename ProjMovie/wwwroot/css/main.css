@@ -36,33 +36,24 @@ header {
 
 
 /*SEARCH BAR STYLING*/
+/*SEARCH BAR STYLING*/
 .search-box {
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%, 0);
     background: #2f3640;
     height: 30px;
+    width: 30px;
     border-radius: 30px;
     padding: 10px;
+    transition: 0.4s;
 }
-
-    .search-box:hover > .search-txt {
-        width: 200px;
-    }
-
-    .search-box:hover > .search-btn {
-        background: white;
-    }
-
-    .search-box:focus-within > .search-txt {
-        width: 200px;
-    }
 
 .search-btn {
     color: rgb(68, 10, 37);
-    float: right;
     width: 30px;
     height: 30px;
+    float: right;
     border-radius: 50%;
     background: #2f3640;
     display: flex;
@@ -79,9 +70,39 @@ header {
     padding: 0;
     color: white;
     font-size: 16px;
-    transition: 0.4s;
-    line-height: 30px;
     width: 0px;
+    line-height: 30px;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    margin-left: 10px;
+    transition: 0.4s;
+}
+
+.search-box:hover {
+    width: 200px;
+}
+
+.search-box:focus-within {
+    width: 200px;
+}
+
+.search-box:hover > .search-txt {
+    width: 160px;
+    visibility: visible;
+}
+
+.search-box:focus-within > .search-txt {
+    width: 160px;
+    visibility: visible;
+}
+
+.search-box:hover > .search-btn {
+    background: white;
+}
+
+.search-box:focus-within > .search-btn {
+    background: white;
 }
 
 
@@ -256,15 +277,12 @@ footer {
 
 /*MEDIA QUERIES*/
 @media only screen and (min-width: 768px) {
-    .search-box:hover > .search-txt {
-        width: 240px;
-        padding: 0 6px;
-    }
-
+    
+    /*SEARCH BAR STYLING*/
     .search-box {
         height: 40px;
+        width: 40px;
         border-radius: 40px;
-        padding: 10px;
     }
 
     .search-btn {
@@ -272,13 +290,29 @@ footer {
         height: 40px;
     }
 
-    .search-box:focus-within > .search-txt {
+    .search-txt {
+        line-height: 40px;
+        font-family: Montserrat;
+    }
+
+    .search-box:hover {
         width: 240px;
     }
 
-    .search-txt {
-        line-height: 40px;
+    .search-box:focus-within {
+        width: 240px;
     }
+
+    .search-box:hover > .search-txt {
+        width: 190px;
+    }
+
+    .search-box:focus-within > .search-txt {
+        width: 190px;
+    }
+
+
+    /*MOVIE STYLING*/
 
     .top-movie {
         width: 40%;
