@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+*{
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background: #0f0f0f;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    color: white;
+    display: flex;
+    padding: 10px;
+}
+
+.detail-movie-title {
+    margin-top: 90px;
+    margin-bottom: 0;
+    color: white;
+}
+
+.single-movie {
+    width: 75%;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.single-movie img {
+    width: 100%;
+}
+
+/*RATE STYLING*/
+.rate {
+    list-style: none;
+    padding: 0;
+}
+
+.rate li {
+    position: relative;
+    display: inline-block;
+    margin: 5px 50px 5px 50px;
+}
+
+.rate a {
+    text-decoration: none;
+}
+
+.rate img{
+    width: 30px;
+}
+
+.hover-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.rate li a:hover > .hover-img {
+    opacity: 1;
+}
+
+.active-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.clicked-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+/*MOVIE INFO STYLING*/
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3.5%;
+}
+
+.movie-info-column1 {
+    padding-right: 4%;
+}
+
+.single-movie-info {
+    color: white;
+    text-align: justify;
+    font-size: 0.85rem;
+}
+
+.accordion{
+    width: 90%;
+    max-width: 1000px;
+    margin: 1rem auto;
+}
+
+.accordion-item{
+    background: transparent;
+    color: white;
+    margin: 1rem 0;
+    border-radius: 0.5rem transparent;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);*/
+}
+
+.accordion-item-header{
+    padding: 1rem 4rem 0.5rem 2rem;
+    min-height: 2.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion-item-header::after{
+    content: "\25BE";
+    font-size: 2.5rem;
+    position: absolute;
+    right: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.accordion-item-header.active::after{
+    /*content: "\2212";*/
+    transform: rotate(60deg);
+}
+
+.accordion-item-body{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content{
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right #008f68, #fae042) 1;
+    text-align: justify;
+}
+
+
+/*MEDIA QUERIES*/
+@media only screen and (min-width: 768px) {
+
+    .detail-movie-title {
+        font-size: 2.5rem;
+    }
+
+    .single-movie {
+        width: 40%;
+        height: 40%;
+    }
+
+    .flex-container {
+        margin: 4%;
+    }
+
+    .single-movie-info {
+        font-size: 1.25rem;
+    }
+    
+    .movie-info-column1 {
+        padding-right: 15%;
+    }
+    
+    .accordion-item-header{
+        padding: 1rem 4rem 0.5rem 13rem;
+        font-size: 1.25rem;
+    }
+    
+    .accordion-item-header::after{
+        font-size: 3rem;
+        right: 12rem;
+    }
+    
+}
