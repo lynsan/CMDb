@@ -190,17 +190,17 @@ h1 {
     cursor: pointer;
 }
 
-    .accordion-item-header::after {
-        content: "\002B";
-        font-size: 2rem;
-        position: absolute;
-        right: 1rem;
-        transition: transform 0.2s ease-in-out;
-    }
+.accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
 
-    .accordion-item-header.active::after {
-        content: "\2212";
-    }
+.accordion-item-header.active::after {
+    content: "\2212";
+}
 
 .accordion-item-body {
     max-height: 0;
@@ -229,15 +229,15 @@ footer {
     padding: 0;
 }
 
-    .footer-links li {
-        position: relative;
-        display: inline-block;
-        margin: 3%;
-    }
+.footer-links li {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
 
-    .footer-links a {
-        text-decoration: none;
-    }
+.footer-links a {
+    text-decoration: none;
+}
 
 .hover-img {
     position: absolute;
