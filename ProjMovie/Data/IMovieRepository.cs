@@ -9,5 +9,6 @@ namespace ProjMovie.Data
     public interface IMovieRepository
     {
         Task<MovieDTO> GetMovie(string movID);
+        //Task<MovieRatingsDTO> GetMovieRatings(string imdbId);
     }
 }
