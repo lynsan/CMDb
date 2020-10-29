@@ -28,14 +28,25 @@ namespace ProjMovie.Data
             
             using (HttpClient client = new HttpClient())
             {
-                string endpoint = $"{baseUrl}?i={movID}{apiKey}";
+                string endpoint = $"{baseUrl}?i={movID}&plot=full{apiKey}";
                 var response = await client.GetAsync(endpoint, HttpCompletionOption.ResponseHeadersRead);
                 response.EnsureSuccessStatusCode();
                 var data = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<MovieDTO>(data);
-                return result;
+                var result = BreakOutPlots(JsonConvert.DeserializeObject<MovieDTO>(data));
+                return (MovieDTO)result;
             }
         }
+
+        private object BreakOutPlots(MovieDTO movieDTO)
+        {
+            //Delar upp plot till två delar.
+            string plot = movieDTO.Plot;
+            movieDTO.Short = plot.Substring(0, 50);
+            movieDTO.Full = plot.Substring(50);
+            return movieDTO;
+        }
+
+
 
         //public async Task<MovieRatingsDTO> GetMovieRatings(string imdbId)
         //{
