@@ -34,12 +34,12 @@
                     <div class="info">
                         <div class="info-text">
                             <h2>@Model[0].Title</h2>
-                            <p>@Model[0].Short</p>
+                            <p>@Model[0].Year</p>
                         </div>
                     </div>
                 </a>
                 <div class="movie-plot">
-                    <p>First part of the plot is not very long <span class="dots">...</span> <span class="more">but it can be longer with more text</span></p>
+                    <p>@Model[0].Short<span class="dots">...</span> <span class="more">@Model[0].Full</span></p>
                     <button onclick="ReadMore(event)" class="myBtn">Read more</button>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                         </div>
                     </a>
                     <div class="movie-plot">
-                        <p>First part of the plot is not very long <span class="dots">...</span> <span class="more">but it can be longer with more text</span></p>
+                        <p>@Model[1].Short<span class="dots">...</span> <span class="more">@Model[1].Full</span></p>
                         <button onclick="ReadMore(event)" class="myBtn">Read more</button>
                     </div>
                 </li>
@@ -70,7 +70,7 @@
                         </div>
                     </a>
                     <div class="movie-plot">
-                        <p>First part of the plot is not very long <span class="dots">...</span> <span class="more">but it can be longer with more text</span></p>
+                        <p>@Model[2].Short<span class="dots">...</span> <span class="more">@Model[2].Full</span></p>
                         <button onclick="ReadMore(event)" class="myBtn">Read more</button>
                     </div>
                 </li>
@@ -85,7 +85,7 @@
                         </div>
                     </a>
                     <div class="movie-plot">
-                        <p>First part of the plot is not very long <span class="dots">...</span> <span class="more">but it can be longer with more text</span></p>
+                        <p>@Model[3].Short<span class="dots">...</span> <span class="more">@Model[3].Full</span></p>
                         <button onclick="ReadMore(event)" class="myBtn">Read more</button>
                     </div>
                 </li>
