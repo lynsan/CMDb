@@ -36,7 +36,6 @@ header {
 
 
 /*SEARCH BAR STYLING*/
-/*SEARCH BAR STYLING*/
 .search-box {
     position: relative;
     left: 50%;
@@ -105,8 +104,31 @@ header {
     background: white;
 }
 
+/*READ MORE BUTTON*/
+.more {
+    display: none;
+}
 
-/*TOP MOVIE STYLING*/
+.myBtn {
+    border: none;
+    background: transparent;
+    color: white;
+    font-family: Montserrat;
+}
+
+.myBtn:hover {
+    text-decoration: underline;
+}
+
+.myBtn:focus-within {
+    outline: none;
+}
+
+/*TOP MOVIE AND MOVIE LIST STYLING*/
+.info, .info .info-text {
+    display: none;
+}
+
 .top-movie-title {
     margin-top: 90px;
     margin-bottom: 0;
@@ -114,68 +136,40 @@ header {
 }
 
 .top-movie {
-    width: 75%;
+    width: 60%;
     position: relative;
     margin: auto;
     margin-top: 20px;
-    margin-bottom: 40px;
 }
 
-.top-movie img, .movie-list li img {
-    width: 100%;
-}
+    .top-movie img {
+        width: 60%;
+    }
 
-.top-movie .info, .movie-list li .info {
-    color: rgba(68, 10, 37, 0);
-    background: rgba(75, 6, 27, 0);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: all 0.35s;
-}
-
-.top-movie:hover .info, .movie-list li:hover .info, .top-movie:active .info, .movie-list li:active .info {
-    color: rgba(255, 255, 255, 1);
-    background: rgba(75, 6, 27, 0.8);
-}
-
-.top-movie .info .info-text {
-    margin: 0;
-    margin-top: 40%;
-    font-size: 28px;
+/*MOVIE LIST STYLING*/
+.movie-list li img {
+    width: 60%;
 }
 
 .movie-list {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0 20px;
+    flex-direction: column;
+    padding: 0;
+    width: 60%;
     margin: auto;
-    max-width: 1200px;
 }
 
-.movie-list li .info .info-text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+    .movie-list li {
+        margin: 20px 0;
+    }
+
+.movie-plot {
+    color: white;
 }
 
-.movie-list li .info .info-text * {
-    padding: 0 5px;
-}
-
-.movie-list li {
-    font-size: 12px;
-    flex-basis: 30%;
-    max-width: calc(30% - 14px);
-    margin: 7px;
-    flex-grow: 1;
+.linktomovie {
     position: relative;
+    display: block;
 }
 
 
@@ -233,7 +227,6 @@ h1 {
     padding: 1rem;
     line-height: 1.5rem;
     border-top: 1px solid;
-/*    border-image:linear-gradient(to right #008f68, #fae042) 1;*/
 }
 
 /*FOOTER STYLING*/
@@ -312,15 +305,81 @@ footer {
     }
 
 
-    /*MOVIE STYLING*/
+    /*MOVIES STYLING*/
+
+    .info, .info .info-text {
+        display: block;
+    }
+
+    .top-movie-title {
+        margin-top: 40px;
+        margin-bottom: 0;
+        color: white;
+    }
 
     .top-movie {
         width: 40%;
-        height: 40%;
+        position: relative;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .top-movie img, .movie-list li img {
+        width: 100%;
+    }
+
+    .top-movie .info, .movie-list li .info {
+        color: rgba(68, 10, 37, 0);
+        background: rgba(75, 6, 27, 0);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all 0.35s;
+    }
+
+    .top-movie:hover .info, .movie-list li:hover .info, .top-movie:active .info, .movie-list li:active .info {
+        color: rgba(255, 255, 255, 1);
+        background: rgba(75, 6, 27, 0.8);
+    }
+
+    .top-movie .info .info-text {
+        margin: 0;
+        margin-top: 40%;
+        font-size: 28px;
     }
 
     .movie-list {
-        width: 50%;
-        height: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0 20px;
+        margin: auto;
+        max-width: 1200px;
+        width: 80%;
+    }
+
+    .movie-list li .info .info-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+    .movie-list li .info .info-text * {
+        padding: 0 5px;
+    }
+
+    .movie-list li {
+        font-size: 12px;
+        flex-basis: 30%;
+        max-width: calc(100% - 14px);
+        margin: 7px;
+        flex-grow: 1;
+        position: relative;
     }
 }
