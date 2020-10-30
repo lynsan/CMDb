@@ -8,6 +8,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/main.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="~/js/main.js"></script>
 </head>
 <body>
     <div class="content-wrapper">
@@ -28,19 +29,23 @@
                 <h1 class="top-movie-title">@Model[0].Title</h1>
             </a>
             <div class="top-movie">
-                <a href="/Detail/Index" class="movie-link">
+                <a href="/Detail/Index" class="linktomovie">
                     <img src="@Model[0].Poster" alt="Top Movie">
                     <div class="info">
                         <div class="info-text">
                             <h2>@Model[0].Title</h2>
-                            <p>@Model[0].Plot</p>
+                            <p>@Model[0].Short</p>
                         </div>
                     </div>
                 </a>
+                <div class="movie-plot">
+                    <p>First part of the plot is not very long <span class="dots">...</span> <span class="more">but it can be longer with more text</span></p>
+                    <button onclick="ReadMore(event)" class="myBtn">Read more</button>
+                </div>
             </div>
             <ul class="movie-list">
                 <li>
-                    <a href="Detail/Index/@Model[1].ImdbID">
+                    <a href="Detail/Index/@Model[1].ImdbID" class="linktomovie">
                         <img src="@Model[1].Poster" alt="poster">
                         <div class="info">
                             <div class="info-text">
@@ -49,9 +54,13 @@
                             </div>
                         </div>
                     </a>
+                    <div class="movie-plot">
+                        <p>First part of the plot is not very long <span class="dots">...</span> <span class="more">but it can be longer with more text</span></p>
+                        <button onclick="ReadMore(event)" class="myBtn">Read more</button>
+                    </div>
                 </li>
                 <li>
-                    <a href="Detail/Index">
+                    <a href="Detail/Index" class="linktomovie">
                         <img src="@Model[2].Poster" alt="poster">
                         <div class="info">
                             <div class="info-text">
@@ -60,9 +69,13 @@
                             </div>
                         </div>
                     </a>
+                    <div class="movie-plot">
+                        <p>First part of the plot is not very long <span class="dots">...</span> <span class="more">but it can be longer with more text</span></p>
+                        <button onclick="ReadMore(event)" class="myBtn">Read more</button>
+                    </div>
                 </li>
                 <li>
-                    <a href="Detail/Index">
+                    <a href="Detail/Index" class="linktomovie">
                         <img src="@Model[3].Poster" alt="poster">
                         <div class="info">
                             <div class="info-text">
@@ -71,6 +84,10 @@
                             </div>
                         </div>
                     </a>
+                    <div class="movie-plot">
+                        <p>First part of the plot is not very long <span class="dots">...</span> <span class="more">but it can be longer with more text</span></p>
+                        <button onclick="ReadMore(event)" class="myBtn">Read more</button>
+                    </div>
                 </li>
 
             </ul>
@@ -90,7 +107,7 @@
                 <li>
                     <a href="#">
                         <img class="logo" src="/Images/InstagramBW.jpg" alt="instagram">
-                        <img class="hover-img" src="/Images/InstagramColor.jpg" alt="FacebookColor.jpg" alt="instagram">
+                        <img class="hover-img" src="/Images/InstagramColor.jpg" alt="instagram">
                     </a>
                 </li>
                 <li>
