@@ -19,7 +19,9 @@
     </div>
     <div class="rate">
         <img id="like-logo" src="/Images/likeBW.jpg" alt="like" onclick="changeLikeImage()">
+        <span class="like-label">Likes</span>
         <img id="dislike-logo" src="/Images/dislikeBW.jpg" alt="like" onclick="changeDislikeImage()">
+        <span class="dislike-label">Dislikes</span>
         @*<img class="hover-img" src="/Images/likeColorOutline.jpg" alt="like">*@
     </div>
     @*<ul class="rate">
@@ -82,8 +84,6 @@
         </div>
     </div>
     <script>
-       
-
         const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
         accordionItemHeaders.forEach(accordionItemHeader => {
