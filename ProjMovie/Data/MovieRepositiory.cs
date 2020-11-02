@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using ProjMovie.Models.DTO;
 using System;
@@ -16,6 +17,7 @@ namespace ProjMovie.Data
         private string baseUrl;
         private string apiKey;
         private string baseUrl2;
+        private string EndPoint;
 
         public MovieRepositiory(IConfiguration configuration)
         {
@@ -23,6 +25,20 @@ namespace ProjMovie.Data
             apiKey = configuration.GetValue<string>("OMDbApi:ApiKey");
             baseUrl2 = configuration.GetValue<string>("CMDbApi:BaseUrl2");
         }
+
+        //public async Task<MovieDTO> GetMovie(string movID)
+        //{
+        //    EndPoint = $"{baseUrl}?i={movID}&plot=full{apiKey}";
+        //    var result = await ApiRequest();
+        //    return result;
+        //}
+
+        //public async Task<List<RatedMoviesDTO>> GetTopList()
+        //{
+        //    EndPoint = $"{baseUrl2}toplist?type=popularity&sort=desc&count=4";
+        //    var result = await ApiRequest();
+        //    return result;
+        //}
 
         public async Task<MovieDTO> GetMovie(string movID)
         {
@@ -39,7 +55,7 @@ namespace ProjMovie.Data
         }
         public async Task<List<RatedMoviesDTO>> GetTopList()
         {
-
+            //TODO: Dont repeat yourself
             using (HttpClient client = new HttpClient())
             {
                 string endpoint = $"{baseUrl2}toplist?type=popularity&sort=desc&count=4";

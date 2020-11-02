@@ -19,7 +19,7 @@ namespace ProjMovie.Controllers
         
         public async Task<IActionResult> Index()
         {
-            var toplist = GetRatedMovies().Result;
+            var toplist = GetRatedMovies().Result; //kolla upp var .Result gör
             var model = await GetMovieList(toplist);
             return View(model);
         }

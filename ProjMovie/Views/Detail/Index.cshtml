@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model ProjMovie.Models.DTO.MovieDTO
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>CMDB movieProject</title>
@@ -11,9 +13,9 @@
     <header>
         <h1>CMDb</h1>
     </header>
-    <h2 class="detail-movie-title">Movie Title</h2>
+    <h2 class="detail-movie-title">@Model.Title</h2>
     <div class="single-movie">
-        <img src="~/Images/poster.jpg" alt="Movie">
+        <img src="@Model.Poster" alt="Movie">
     </div>
     <div class="rate">
         <img id="like-logo" src="/Images/likeBW.jpg" alt="like" onclick="changeLikeImage()">
@@ -82,7 +84,7 @@
     <script>
         function changeLikeImage() {
             var likeImage = document.getElementById('like-logo');
-            var dislikeImage = document.getElementById('dislike-logo'); 
+            var dislikeImage = document.getElementById('dislike-logo');
             if (likeImage.src.match("/Images/likeBW.jpg")) {
                 likeImage.src = "/Images/likeColor.jpg"
                 dislikeImage.src = "/Images/dislikeGray.jpg"
