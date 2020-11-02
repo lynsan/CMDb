@@ -19,26 +19,25 @@ namespace ProjMovie.Controllers
         
         public async Task<IActionResult> Index()
         {
-            var model = await GetMovieList(GetRatedMovies());
+            var toplist = GetRatedMovies().Result;
+            var model = await GetMovieList(toplist);
             return View(model);
         }
 
-        private async Task<List<MovieDTO>> GetMovieList(String[] array)
+        private async Task<List<MovieDTO>> GetMovieList(List<RatedMoviesDTO> array)
         {
             List<MovieDTO> movList = new List<MovieDTO>();
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Count; i++)
             {
-                var item = await movieRepository.GetMovie(array[i]);
+                var item = await movieRepository.GetMovie(array[i].ImdbId);
                 movList.Add(item);
             }
             return movList;
         }
 
-        private string[] GetRatedMovies()
+        private async Task<List<RatedMoviesDTO>> GetRatedMovies()
         {
-            //TODO: Hämta topp tre id från CMDb
-            string[] mock = {"tt3731562", "tt10048342", "tt12298506", "tt1735898"};
-            return mock;
+            return await movieRepository.GetTopList();
         }
     }
 }

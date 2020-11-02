@@ -1,4 +1,5 @@
 ﻿@model List<ProjMovie.Models.DTO.MovieDTO>
+@{var topfilm = Model[0].ImdbID;}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,52 +45,28 @@
                 </div>
             </div>
             <ul class="movie-list">
-                <li>
-                    <a href="Detail/Index/@Model[1].ImdbID" class="linktomovie">
-                        <img src="@Model[1].Poster" alt="poster">
-                        <div class="info">
-                            <div class="info-text">
-                                <h2>@Model[1].Title</h2>
-                                <p>more info bla bla</p>
+                @foreach (var film in Model)
+                {
+                    if (film.ImdbID != topfilm)
+                    {
+                        <li>
+                            <a href="Detail/Index/@film.ImdbID" class="linktomovie">
+                                <img src="@film.Poster" alt="poster">
+                                <div class="info">
+                                    <div class="info-text">
+                                        <h2>@film.Title</h2>
+                                        <p>more info bla bla</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="movie-plot">
+                                <p>@film.Short<span class="dots">...</span> <span class="more">@film.Full</span></p>
+                                <button onclick="ReadMore(event)" class="myBtn">Read more</button>
                             </div>
-                        </div>
-                    </a>
-                    <div class="movie-plot">
-                        <p>@Model[1].Short<span class="dots">...</span> <span class="more">@Model[1].Full</span></p>
-                        <button onclick="ReadMore(event)" class="myBtn">Read more</button>
-                    </div>
-                </li>
-                <li>
-                    <a href="Detail/Index" class="linktomovie">
-                        <img src="@Model[2].Poster" alt="poster">
-                        <div class="info">
-                            <div class="info-text">
-                                <h2>@Model[2].Title</h2>
-                                <p>more info bla bla</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="movie-plot">
-                        <p>@Model[2].Short<span class="dots">...</span> <span class="more">@Model[2].Full</span></p>
-                        <button onclick="ReadMore(event)" class="myBtn">Read more</button>
-                    </div>
-                </li>
-                <li>
-                    <a href="Detail/Index" class="linktomovie">
-                        <img src="@Model[3].Poster" alt="poster">
-                        <div class="info">
-                            <div class="info-text">
-                                <h2>@Model[3].Title</h2>
-                                <p>more info bla bla</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="movie-plot">
-                        <p>@Model[3].Short<span class="dots">...</span> <span class="more">@Model[3].Full</span></p>
-                        <button onclick="ReadMore(event)" class="myBtn">Read more</button>
-                    </div>
-                </li>
+                        </li>
+                    }
 
+                }
             </ul>
         </div>
         <footer>
@@ -119,7 +96,6 @@
             </ul>
             <p class="copyright"><b>&copy; 2020 CMDb</b></p>
         </footer>
-
     </div>
 </body>
 </html>

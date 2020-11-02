@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ProjMovie.Data
@@ -36,6 +37,19 @@ namespace ProjMovie.Data
                 return (MovieDTO)result;
             }
         }
+        public async Task<List<RatedMoviesDTO>> GetTopList()
+        {
+
+            using (HttpClient client = new HttpClient())
+            {
+                string endpoint = $"{baseUrl2}toplist?type=popularity&sort=desc&count=4";
+                var response = await client.GetAsync(endpoint, HttpCompletionOption.ResponseHeadersRead);
+                response.EnsureSuccessStatusCode();
+                var data = await response.Content.ReadAsStringAsync();
+                var myobjList = JsonConvert.DeserializeObject<List<RatedMoviesDTO>>(data);
+                return myobjList;
+            }
+        }
 
         private object BreakOutPlots(MovieDTO movieDTO)
         {
@@ -46,20 +60,5 @@ namespace ProjMovie.Data
             return movieDTO;
         }
 
-
-
-        //public async Task<MovieRatingsDTO> GetMovieRatings(string imdbId)
-        //{
-
-        //    using (HttpClient client = new HttpClient())
-        //    {
-        //        string endpoint = $"{baseUrl2}?i={imdbId}";
-        //        var response = await client.GetAsync(endpoint, HttpCompletionOption.ResponseHeadersRead);
-        //        response.EnsureSuccessStatusCode();
-        //        var data = await response.Content.ReadAsStringAsync();
-        //        var result = JsonConvert.DeserializeObject<MovieRatingsDTO>(data);
-        //        return result;
-        //    }
-        //}
     }
 }
