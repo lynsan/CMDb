@@ -1,17 +1,19 @@
-const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+function ShowInfo() {
+    const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
-accordionItemHeaders.forEach(accordionItemHeader => {
-    accordionItemHeader.addEventListener("click", event => {
-        accordionItemHeader.classList.toggle("active");
-        const accordionItemBody = accordionItemHeader.nextElementSibling;
-        if(accordionItemHeader.classList.contains("active")){
-            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";        
-        }
-        else{
-            accordionItemBody.style.maxHeight = 0;
-        }
+    accordionItemHeaders.forEach(accordionItemHeader => {
+        accordionItemHeader.addEventListener("click", event => {
+            accordionItemHeader.classList.toggle("active");
+            const accordionItemBody = accordionItemHeader.nextElementSibling;
+            if (accordionItemHeader.classList.contains("active")) {
+                accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+            }
+            else {
+                accordionItemBody.style.maxHeight = 0;
+            }
+        });
     });
-});
+}
 
 function ReadMore(ev) {
     const btn = ev.target;
