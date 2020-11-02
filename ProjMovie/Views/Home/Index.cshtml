@@ -26,11 +26,11 @@
                     <i class="fas fa-search"></i>
                 </a>
             </div>
-            <a href="Detail/Index/@Model[0].ImdbID" class="movie-link">
+            <a href="Detail/Index/@topfilm" class="movie-link">
                 <h1 class="top-movie-title">@Model[0].Title</h1>
             </a>
             <div class="top-movie">
-                <a href="/Detail/Index" class="linktomovie">
+                <a href="/Detail/Index/@topfilm" class="linktomovie">
                     <img src="@Model[0].Poster" alt="Top Movie">
                     <div class="info">
                         <div class="info-text">

@@ -29,3 +29,27 @@ function ReadMore(ev) {
         moreText.style.display = "inline";
     }
 }
+
+function changeLikeImage() {
+    var likeImage = document.getElementById('like-logo');
+    var dislikeImage = document.getElementById('dislike-logo');
+    if (likeImage.src.match("/Images/likeBW.jpg")) {
+        likeImage.src = "/Images/likeColor.jpg"
+        dislikeImage.src = "/Images/dislikeGray.jpg"
+    }
+    else {
+        image.src = "/Images/likeBW.jpg"
+    }
+};
+
+function changeDislikeImage() {
+    var likeImage = document.getElementById('like-logo');
+    var dislikeImage = document.getElementById('dislike-logo');
+    if (dislikeImage.src.match("/Images/dislikeBW.jpg")) {
+        likeImage.src = "/Images/likeGray.jpg"
+        dislikeImage.src = "/Images/dislikeColor.jpg"
+    }
+    else {
+        image.src = "/Images/dislikeBW.jpg"
+    }
+};
