@@ -31,7 +31,7 @@
             </a>
             <div class="top-movie">
                 <a href="/Detail/Index/@topfilm" class="linktomovie">
-                    <img src="@Model[0].Poster" alt="Top Movie">
+                    <img src="@Model[0].Poster" alt="Top Movie" onerror="this.onerror=null; this.src='Images/poster.jpg'">
                     <div class="info">
                         <div class="info-text">
                             <h2>@Model[0].Title</h2>
@@ -51,7 +51,7 @@
                     {
                         <li>
                             <a href="Detail/Index/@film.ImdbID" class="linktomovie">
-                                <img src="@film.Poster" alt="poster">
+                                <img src="@film.Poster" alt="poster" onerror="this.onerror=null; this.src='Images/poster.jpg'">
                                 <div class="info">
                                     <div class="info-text">
                                         <h2>@film.Title</h2>
