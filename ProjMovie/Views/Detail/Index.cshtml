@@ -7,95 +7,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="~/css/detail.css">
+    <link rel="stylesheet" href="~/css/main.css">
     <script src="~/js/main.js"></script>
 </head>
 <body>
-    <header>
-        <h1>CMDb</h1>
-    </header>
-    <h2 class="detail-movie-title">@Model.Title</h2>
-    <div class="single-movie">
-        <img src="@Model.Poster" alt="Movie">
-    </div>
-    <div class="rate">
-        <!--https://www.w3schools.com/tags/att_data-.asp-->
-        <button id="like" data-imdbid="@Model.ImdbID" onclick="like()">
-            <img src="/Images/likeBW.jpg" alt="like" />
-            <img class="hover-img" src="/Images/likeColorOutline.jpg" alt="like">
-        </button>
-        <span id="totalLikes">Likes</span>
-        <button id="dislike" data-imdbid="@Model.ImdbID" onclick="dislike()">
-            <img src="/Images/dislikeBW.jpg" alt="dislike" />
-            <img class="hover-img" src="/Images/dislikeColorOutline.jpg" alt="dislike">
-        </button>
-        <span id="totalDislikes">Dislikes</span>
-    </div>
-    <div class="flex-container">
-        <div class="movie-info-column1">
-            <div class="single-movie-info">
-                <p><b>Year:</b> @Model.Year</p>
+    <div class="content-wrapper">
+        <div class="content">
+            <header>
+                <h1>CMDb</h1>
+            </header>
+            <h2 class="detail-movie-title">@Model.Title</h2>
+            <div class="single-movie">
+                <img src="@Model.Poster" alt="Movie">
             </div>
-            <div class="single-movie-info">
-                <p><b>Genre:</b> @Model.Genre</p>
+            <div class="rate">
+                <!--https://www.w3schools.com/tags/att_data-.asp-->
+                <button id="like" data-imdbid="@Model.ImdbID" onclick="like()">
+                    <img src="/Images/likeBW.jpg" alt="like" />
+                    <img class="hover-img" src="/Images/likeColorOutline.jpg" alt="like">
+                </button>
+                <span id="totalLikes">Likes</span>
+                <button id="dislike" data-imdbid="@Model.ImdbID" onclick="dislike()">
+                    <img src="/Images/dislikeBW.jpg" alt="dislike" />
+                    <img class="hover-img" src="/Images/dislikeColorOutline.jpg" alt="dislike">
+                </button>
+                <span id="totalDislikes">Dislikes</span>
             </div>
-        </div>
-        <div class="movie-info-column2">
-            <div class="single-movie-info">
-                <p><b>Runtime:</b> @Model.Runtime</p>
+            <div class="flex-container">
+                <div class="movie-info-column1">
+                    <div class="single-movie-info">
+                        <p><b>Year:</b> @Model.Year</p>
+                    </div>
+                    <div class="single-movie-info">
+                        <p><b>Genre:</b> @Model.Genre</p>
+                    </div>
+                </div>
+                <div class="movie-info-column2">
+                    <div class="single-movie-info">
+                        <p><b>Runtime:</b> @Model.Runtime</p>
+                    </div>
+                    <div class="single-movie-info">
+                        <p><b>Language:</b> @Model.Language</p>
+                    </div>
+                </div>
             </div>
-            <div class="single-movie-info">
-                <p><b>Language:</b> @Model.Language</p>
-            </div>
-        </div>
-    </div>
-    <div class="accordion">
-        <div class="accordion-item">
-            <div class="accordion-item-header" onclick="ShowInfo()">
-                Plot
-            </div>
-            <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                    @Model.Plot
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-item-header" onclick="ShowInfo()">
+                        Plot
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            @Model.Plot
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-header" onclick="ShowInfo()">
+                        Actors
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            @Model.Actors
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="accordion-item">
-            <div class="accordion-item-header" onclick="ShowInfo()">
-                Actors
-            </div>
-            <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                    @Model.Actors
-                </div>
-            </div>
+            <footer>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#">
+                            <div class="logo">
+                                <img src="/Images/FacebookBW.jpg" alt="facebook">
+                            </div>
+                            <div class="hover-img">
+                                <img src="/Images/FacebookColor.jpg" alt="facebook">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="logo" src="/Images/InstagramBW.jpg" alt="instagram">
+                            <img class="hover-img" src="/Images/InstagramColor.jpg" alt="instagram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="logo" src="/Images/TwitterBW.jpg" alt="twitter">
+                            <img class="hover-img" src="/Images/twitterColor.jpg" alt="twitter">
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright"><b>&copy; 2020 CMDb</b></p>
+            </footer>
         </div>
-    </div>
-    <footer>
-        <ul class="footer-links">
-            <li>
-                <a href="#">
-                    <div class="logo">
-                        <img src="/Images/FacebookBW.jpg" alt="facebook">
-                    </div>
-                    <div class="hover-img">
-                        <img src="/Images/FacebookColor.jpg" alt="facebook">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img class="logo" src="/Images/InstagramBW.jpg" alt="instagram">
-                    <img class="hover-img" src="/Images/InstagramColor.jpg" alt="instagram">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img class="logo" src="/Images/TwitterBW.jpg" alt="twitter">
-                    <img class="hover-img" src="/Images/twitterColor.jpg" alt="twitter">
-                </a>
-            </li>
-        </ul>
-        <p class="copyright"><b>&copy; 2020 CMDb</b></p>
-    </footer>
 </body>
 </html>
