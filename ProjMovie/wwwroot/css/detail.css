@@ -45,14 +45,10 @@ header {
     color: #fff;
 }
 
-.rate li {
-    position: relative;
-    display: inline-block;
-    margin: 5px 50px 5px 50px;
-}
-
-.rate a {
-    text-decoration: none;
+.rate button {
+    background: transparent;
+    margin: 1rem 0;
+    border-radius: 0.5rem transparent;
 }
 
 .rate img{
@@ -65,35 +61,13 @@ header {
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0;
-    transition: 0.4s;
-    overflow: hidden;
-}
-
-.rate li a:hover > .hover-img {
     opacity: 1;
-}
-
-.active-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
     transition: 0.4s;
     overflow: hidden;
 }
 
-.clicked-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    transition: 0.4s;
-    overflow: hidden;
+.rate a:hover > .hover-img {
+    opacity: 1;
 }
 
 /*MOVIE INFO STYLING*/
