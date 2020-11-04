@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ProjMovie.Data;
 using ProjMovie.Models.DTO;
+using ProjMovie.Models.ViewModels;
 
 namespace ProjMovie.Controllers
 {
@@ -24,13 +26,17 @@ namespace ProjMovie.Controllers
             return View(model);
         }
 
-        private async Task<List<MovieDTO>> GetMovieList(List<RatedMoviesDTO> array)
+        private async Task<List<MovieViewModel>> GetMovieList(List<RatedMoviesDTO> ratedMoviesList)
         {
-            List<MovieDTO> movList = new List<MovieDTO>();
-            for (int i = 0; i < array.Count; i++)
+            List<MovieViewModel> movList = new List<MovieViewModel>();
+            for (int i = 0; i < ratedMoviesList.Count; i++)
             {
-                var item = await movieRepository.GetMovie(array[i].ImdbId);
-                movList.Add(item);
+                MovieViewModel homeViewModel = new MovieViewModel();
+                var movie = await movieRepository.GetMovie(ratedMoviesList[i].ImdbId);
+                homeViewModel.Movie = movie;
+                var rating = await movieRepository.GetRating(ratedMoviesList[i].ImdbId);
+                homeViewModel.Ratings = rating;
+                movList.Add(homeViewModel);
             }
             return movList;
         }

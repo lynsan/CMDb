@@ -1,5 +1,5 @@
-﻿@model List<ProjMovie.Models.DTO.MovieDTO>
-@{var topfilm = Model[0].ImdbID;}
+﻿@model List<ProjMovie.Models.ViewModels.MovieViewModel>
+@{var topfilm = Model[0].Movie.ImdbID;}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,40 +27,40 @@
                 </a>
             </div>
             <a href="Detail/Index/@topfilm" class="movie-link">
-                <h1 class="top-movie-title">@Model[0].Title</h1>
+                <h1 class="top-movie-title">@Model[0].Movie.Title</h1>
             </a>
             <div class="top-movie">
                 <a href="/Detail/Index/@topfilm" class="linktomovie">
-                    <img src="@Model[0].Poster" alt="Top Movie" onerror="this.onerror=null; this.src='Images/poster.jpg'">
+                    <img src="@Model[0].Movie.Poster" alt="Top Movie" onerror="this.onerror=null; this.src='Images/poster.jpg'">
                     <div class="info">
                         <div class="info-text">
-                            <h2>@Model[0].Title</h2>
-                            <p>@Model[0].Year</p>
+                            <h2>@Model[0].Movie.Title</h2>
+                            <p>Likes: @Model[0].Ratings.NumberOfLikes Dislikes: @Model[0].Ratings.NumberOfDislikes</p>
                         </div>
                     </div>
                 </a>
                 <div class="movie-plot">
-                    <p>@Model[0].Short<span class="dots">...</span> <span class="more">@Model[0].Full</span></p>
+                    <p>@Model[0].Movie.Short<span class="dots">...</span> <span class="more">@Model[0].Movie.Full</span></p>
                     <button onclick="ReadMore(event)" class="myBtn">Read more</button>
                 </div>
             </div>
             <ul class="movie-list">
                 @foreach (var film in Model)
                 {
-                    if (film.ImdbID != topfilm)
+                    if (film.Movie.ImdbID != topfilm)
                     {
                         <li>
-                            <a href="Detail/Index/@film.ImdbID" class="linktomovie">
-                                <img src="@film.Poster" alt="poster" onerror="this.onerror=null; this.src='Images/poster.jpg'">
+                            <a href="Detail/Index/@film.Movie.ImdbID" class="linktomovie">
+                                <img src="@film.Movie.Poster" alt="poster" onerror="this.onerror=null; this.src='Images/poster.jpg'">
                                 <div class="info">
                                     <div class="info-text">
-                                        <h2>@film.Title</h2>
-                                        <p>more info bla bla</p>
+                                        <h2>@film.Movie.Title</h2>
+                                        <p>Likes: @film.Ratings.NumberOfLikes Dislikes: @film.Ratings.NumberOfDislikes</p>
                                     </div>
                                 </div>
                             </a>
                             <div class="movie-plot">
-                                <p>@film.Short<span class="dots">...</span> <span class="more">@film.Full</span></p>
+                                <p>@film.Movie.Short<span class="dots">...</span> <span class="more">@film.Movie.Full</span></p>
                                 <button onclick="ReadMore(event)" class="myBtn">Read more</button>
                             </div>
                         </li>
