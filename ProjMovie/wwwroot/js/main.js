@@ -83,6 +83,15 @@ function ReadMore(ev) {
     }
 }
 
+function search(ev) {
+    if (ev.target.value.length > 0) {
+        ev.target.parentElement.classList.add('not-empty');
+    }
+    else {
+        ev.target.parentElement.classList.remove('not-empty');
+    }
+}
+
 
 //function changeLikeImage() {
 //    var likeImage = document.getElementById('like-logo');
