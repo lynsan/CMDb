@@ -1,33 +1,52 @@
-// Like a movie and get an updated number of likes
-function like() {
-    document.getElementById('like').disabled = true;
-    document.getElementById('dislike').disabled = true;
-    var btn = document.getElementById('like');
-    var imdbId = btn.getAttribute('data-imdbid');
-    var url = 'https://cmdbapi.kaffekod.se/api/'
-    var fullUrl = url + imdbId + '/like';
-    fetch(fullUrl) //we send in a url in which will give us data
-        .then((res) => res.json()) //we get an object of response which is a data then we convert it to a new object which gives us another data
-        .then((data) => {
-            document.getElementById('totalLikes').innerHTML = data.numberOfLikes; //getting the specific data we want
-        })
-        .catch((err) => console.log(err))
+//// Like a movie and get an updated number of likes
+//function like() {
+//    document.getElementById('like').disabled = true;
+//    document.getElementById('dislike').disabled = true;
+//    var btn = document.getElementById('like');
+//    var imdbId = btn.getAttribute('data-imdbid');
+//    var url = 'https://cmdbapi.kaffekod.se/api/'
+//    var fullUrl = url + imdbId + '/like';
+//    fetch(fullUrl) //we send in a url in which will give us data
+//        .then((res) => res.json()) //we get an object of response which is a data then we convert it to a new object which gives us another data
+//        .then((data) => {
+//            document.getElementById('totalLikes').innerHTML = data.numberOfLikes; //getting the specific data we want
+//        })
+//        .catch((err) => console.log(err))
+//}
+
+//// Dislike a movie and get an updated number of dislikes
+//function dislike() {
+//    document.getElementById('like').disabled = true;
+//    document.getElementById('dislike').disabled = true;
+//    var btn = document.getElementById('dislike');
+//    var imdbId = btn.getAttribute('data-imdbid');
+//    var url = 'https://cmdbapi.kaffekod.se/api/'
+//    var fullUrl = url + imdbId + '/dislike';
+//    fetch(fullUrl)
+//        .then((res) => res.json())
+//        .then((data) => {
+//            document.getElementById('totalDislikes').innerHTML = data.numberOfDislikes;
+//        })
+//        .catch((err) => console.log(err))
+//}
+
+function likeBtnClick() {
+    document.getElementById("likeHoverImg").src = "/Images/likeColor.jpg";
+    document.getElementById("dislikeHoverImg").src = "/Images/dislikeGray.jpg";
+    disableEverything();
 }
 
-// Dislike a movie and get an updated number of dislikes
-function dislike() {
-    document.getElementById('like').disabled = true;
-    document.getElementById('dislike').disabled = true;
-    var btn = document.getElementById('dislike');
-    var imdbId = btn.getAttribute('data-imdbid');
-    var url = 'https://cmdbapi.kaffekod.se/api/'
-    var fullUrl = url + imdbId + '/dislike';
-    fetch(fullUrl)
-        .then((res) => res.json())
-        .then((data) => {
-            document.getElementById('totalDislikes').innerHTML = data.numberOfDislikes;
-        })
-        .catch((err) => console.log(err))
+function dislikeBtnClick() {
+    document.getElementById("dislikeHoverImg").src = "/Images/dislikeColor.jpg";
+    document.getElementById("likeHoverImg").src = "/Images/likeGray.jpg";
+    disableEverything();
+}
+
+function disableEverything() {
+    document.getElementsByClassName("hover")[0].style.opacity = 1;
+    document.getElementsByClassName("hover")[1].style.opacity = 1;
+    document.getElementById("ListItemDislike").style.pointerEvents = "none";
+    document.getElementById("ListItemLike").style.pointerEvents = "none";
 }
 
 function ShowInfo() {
@@ -63,6 +82,7 @@ function ReadMore(ev) {
         moreText.style.display = "inline";
     }
 }
+
 
 //function changeLikeImage() {
 //    var likeImage = document.getElementById('like-logo');

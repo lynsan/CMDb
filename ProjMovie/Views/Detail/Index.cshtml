@@ -1,13 +1,12 @@
 ﻿@model ProjMovie.Models.ViewModels.MovieViewModel
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>CMDB movieProject</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="~/css/detail.css">
-    <link rel="stylesheet" href="~/css/main.css">
+    <link href="~/css/detail.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
     <script src="~/js/main.js"></script>
 </head>
 <body>
@@ -22,6 +21,7 @@
             </div>
             <div class="rate">
                 <!--https://www.w3schools.com/tags/att_data-.asp-->
+                <!--
                 <button id="like" data-imdbid="@Model.Movie.ImdbID" onclick="like()">
                     <img src="/Images/likeBW.jpg" alt="like" />
                     <img class="hover-img" src="/Images/likeColorOutline.jpg" alt="like">
@@ -31,7 +31,41 @@
                     <img src="/Images/dislikeBW.jpg" alt="dislike" />
                     <img class="hover-img" src="/Images/dislikeColorOutline.jpg" alt="dislike">
                 </button>
-                <span id="totalDislikes">@Model.Ratings.NumberOfDislikes</span>
+                -->
+
+                <ul class="ratings">
+                    <li onclick="likeBtnClick();" class="onHover" id="ListItemLike">
+                        <div>
+                            <img src="/Images/likeBW.jpg" alt="">
+                        </div>
+                        <div class="hover">
+                            <img src="/Images/likeColorOutline.jpg" alt="" id="likeHoverImg">
+                        </div>
+
+                    </li>
+                    <li class="numberOfRatings">
+                        <p>@Model.Ratings.NumberOfLikes</p>
+                    </li>
+                    <li onclick="dislikeBtnClick();" class="onHover" id="ListItemDislike">
+                        <div class=rateImg>
+                            <img src="/Images/dislikeBW.jpg" alt="">
+                        </div>
+                        <div class="hover">
+                            <img src="/Images/dislikeColorOutline.jpg" alt="" id=dislikeHoverImg>
+                        </div>
+                    </li>
+                    <li class="numberOfRatings">
+                        <p>@Model.Ratings.NumberOfDislikes</p>
+                    </li>
+                </ul>
+
+
+
+
+
+
+
+
             </div>
             <div class="flex-container">
                 <div class="movie-info-column1">
@@ -74,33 +108,33 @@
                 </div>
             </div>
         </div>
-            <footer>
-                <ul class="footer-links">
-                    <li>
-                        <a href="#">
-                            <div class="logo">
-                                <img src="/Images/FacebookBW.jpg" alt="facebook">
-                            </div>
-                            <div class="hover-img">
-                                <img src="/Images/FacebookColor.jpg" alt="facebook">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img class="logo" src="/Images/InstagramBW.jpg" alt="instagram">
-                            <img class="hover-img" src="/Images/InstagramColor.jpg" alt="instagram">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img class="logo" src="/Images/TwitterBW.jpg" alt="twitter">
-                            <img class="hover-img" src="/Images/twitterColor.jpg" alt="twitter">
-                        </a>
-                    </li>
-                </ul>
-                <p class="copyright"><b>&copy; 2020 CMDb</b></p>
-            </footer>
-        </div>
+        <footer>
+            <ul class="footer-links">
+                <li>
+                    <a href="#">
+                        <div class="logo">
+                            <img src="/Images/FacebookBW.jpg" alt="facebook">
+                        </div>
+                        <div class="hover-img">
+                            <img src="/Images/FacebookColor.jpg" alt="facebook">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="logo" src="/Images/InstagramBW.jpg" alt="instagram">
+                        <img class="hover-img" src="/Images/InstagramColor.jpg" alt="instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="logo" src="/Images/TwitterBW.jpg" alt="twitter">
+                        <img class="hover-img" src="/Images/twitterColor.jpg" alt="twitter">
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright"><b>&copy; 2020 CMDb</b></p>
+        </footer>
+    </div>
 </body>
 </html>

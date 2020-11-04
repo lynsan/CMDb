@@ -1,9 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 
-*{
-	margin: 0;
-	border: 0;
-	box-sizing: border-box;
+
+/*RATE STYLING*/
+.rate {
+    list-style: none;
+    padding: 0;
+    color: #fff;
+}
+
+
+    .rate img {
+        width: 30px;
+    }
+
+.ratings {
+    list-style: none;
+    padding: 0;
+}
+
+    .ratings li {
+        position: relative;
+        display: inline-block;
+        margin: 0px;
+    }
+
+.hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.onHover:hover > .hover {
+    opacity: 1;
+}
+
+.rateImg {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.numberOfRatings {
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -34,41 +89,12 @@ header {
     margin-bottom: 40px;
 }
 
-.single-movie img {
-    width: 100%;
-}
+    .single-movie img {
+        width: 100%;
+    }
 
-/*RATE STYLING*/
-.rate {
-    list-style: none;
-    padding: 0;
-    color: #fff;
-}
 
-.rate button {
-    background: transparent;
-    margin: 1rem 0;
-    border-radius: 0.5rem transparent;
-}
 
-.rate img{
-    width: 30px;
-}
-
-.hover-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 1;
-    transition: 0.4s;
-    overflow: hidden;
-}
-
-.rate a:hover > .hover-img {
-    opacity: 1;
-}
 
 /*MOVIE INFO STYLING*/
 .flex-container {
@@ -88,13 +114,13 @@ header {
     font-size: 0.85rem;
 }
 
-.accordion{
+.accordion {
     width: 90%;
     max-width: 1000px;
     margin: 1rem auto;
 }
 
-.accordion-item{
+.accordion-item {
     background: transparent;
     color: white;
     margin: 1rem 0;
@@ -102,7 +128,7 @@ header {
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);*/
 }
 
-.accordion-item-header{
+.accordion-item-header {
     padding: 1rem 4rem 0.5rem 2rem;
     min-height: 2.5rem;
     line-height: 1.25rem;
@@ -114,26 +140,26 @@ header {
     cursor: pointer;
 }
 
-.accordion-item-header::after{
-    content: "\25BE";
-    font-size: 2.5rem;
-    position: absolute;
-    right: 1.5rem;
-    transition: transform 0.2s ease-in-out;
-}
+    .accordion-item-header::after {
+        content: "\25BE";
+        font-size: 2.5rem;
+        position: absolute;
+        right: 1.5rem;
+        transition: transform 0.2s ease-in-out;
+    }
 
-.accordion-item-header.active::after{
-    /*content: "\2212";*/
-    transform: rotate(60deg);
-}
+    .accordion-item-header.active::after {
+        /*content: "\2212";*/
+        transform: rotate(60deg);
+    }
 
-.accordion-item-body{
+.accordion-item-body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
 
-.accordion-item-body-content{
+.accordion-item-body-content {
     padding: 1rem;
     line-height: 1.5rem;
     border-top: 1px solid;
@@ -160,19 +186,18 @@ header {
     .single-movie-info {
         font-size: 1.25rem;
     }
-    
+
     .movie-info-column1 {
         padding-right: 15%;
     }
-    
-    .accordion-item-header{
+
+    .accordion-item-header {
         padding: 1rem 4rem 0.5rem 13rem;
         font-size: 1.25rem;
     }
-    
-    .accordion-item-header::after{
-        font-size: 3rem;
-        right: 12rem;
-    }
-    
+
+        .accordion-item-header::after {
+            font-size: 3rem;
+            right: 12rem;
+        }
 }
