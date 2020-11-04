@@ -52,21 +52,12 @@ namespace ProjMovie.Data
         }
 
         /// <summary>
-        /// Ger en rating och returnerar filmen med uppdaterade ratings. True = like, false = dislike
+        /// Hämtar rating för en specifik film
         /// </summary>
         /// <param name="movID"></param>
         /// <returns></returns>
-        public async Task<RatedMoviesDTO> Rate(string movID, bool rating)
+        public async Task<RatedMoviesDTO> GetRating(string movID)
         {
-            if (rating)
-            {
-                EndPoint = $"{baseUrl2}movie/{movID}/like";
-            }
-            else
-            {
-                EndPoint = $"{baseUrl2}movie/{movID}/dislike";
-            }
-            await ApiRequest<RatedMoviesDTO>();
             EndPoint = $"{baseUrl2}movie/{movID}";
             var result = await ApiRequest<RatedMoviesDTO>();
             return result;
