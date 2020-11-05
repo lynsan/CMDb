@@ -60,6 +60,13 @@ namespace ProjMovie.Data
         {
             EndPoint = $"{baseUrl2}movie/{movID}";
             var result = await ApiRequest<RatedMoviesDTO>();
+            if(result == null)
+            {
+                result = new RatedMoviesDTO();
+                result.NumberOfLikes = "0";
+                result.NumberOfDislikes = "0";
+            }
+
             return result;
         }
 

@@ -86,4 +86,37 @@ function search(ev) {
     else {
         ev.target.parentElement.classList.remove('not-empty');
     }
+    apiSearch(ev);
+}
+
+function apiSearch(ev) {
+    var omdbUrl = 'https://www.omdbapi.com/?apikey=aa247f46&s='
+    var searchText = ev.target.value
+
+    fetch(omdbUrl + searchText)
+        .then((res) => res.json())
+        .then((data) => {
+
+
+            if (data.Response === "True") {
+                document.getElementById('first').innerHTML = data.Search[0].Title
+                document.getElementById('firstLink').href = "Detail/Index/" + data.Search[0].imdbID
+                document.getElementById('second').innerHTML = data.Search[1].Title
+                document.getElementById('secondLink').href = "Detail/Index/" + data.Search[1].imdbID
+                document.getElementById('third').innerHTML = data.Search[2].Title
+                document.getElementById('thirdLink').href = "Detail/Index/" + data.Search[2].imdbID
+                document.getElementById('fourth').innerHTML = data.Search[3].Title
+                document.getElementById('fourthLink').href = "Detail/Index/" + data.Search[3].imdbID
+            }
+            else {
+
+                document.getElementById('first').innerHTML = "No movie found!"
+                document.getElementById('second').innerHTML = ""
+                document.getElementById('third').innerHTML = ""
+                document.getElementById('fourth').innerHTML = ""
+
+            }
+
+        })
+        .catch((err) => console.log(err))
 }
