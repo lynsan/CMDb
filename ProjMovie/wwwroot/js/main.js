@@ -80,7 +80,6 @@ function disableEverything() {
     document.getElementById("ListItemDislike").style.pointerEvents = "none";
     document.getElementById("ListItemLike").style.pointerEvents = "none";
 }
-
 function getApiLike() {
     var btn = document.getElementById('ListItemLike');
     var imdbId = btn.getAttribute('data-imdbid');
@@ -111,6 +110,7 @@ function ShowInfo() {
     const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
     accordionItemHeaders.forEach(accordionItemHeader => {
+        accordionItemHeader.addEventListener("click", event => {
             accordionItemHeader.classList.toggle("active");
             const accordionItemBody = accordionItemHeader.nextElementSibling;
             if (accordionItemHeader.classList.contains("active")) {
@@ -120,6 +120,7 @@ function ShowInfo() {
                 accordionItemBody.style.maxHeight = 0;
             }
         });
+    });
 }
 
 
