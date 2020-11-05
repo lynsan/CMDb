@@ -95,8 +95,8 @@ namespace ProjMovie.Data
         private object BreakOutPlots(MovieDTO movieDTO)
         {
             string plot = movieDTO.Plot;
-            movieDTO.Short = plot.Substring(0, 50);
-            movieDTO.Full = plot.Substring(50);
+            movieDTO.Short = plot.Substring(0, 50); // tar de första 50 teckena av strängen
+            movieDTO.Full = plot.Substring(50); // tar allt efter 50 tecken
             return movieDTO;
         }
 

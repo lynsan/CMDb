@@ -19,16 +19,14 @@ namespace ProjMovie.Controllers
         {
             this.movieRepository = movieRepository;
         }
-        public async Task<IActionResult> Index(string ID)
+        public async Task<IActionResult> Index(string id)
         {
-            ViewData["Title"] = ID;
             MovieViewModel movieViewModel = new MovieViewModel();
-            var movie = await movieRepository.GetMovie(ID);
-            var rating = await movieRepository.GetRating(ID);
+            var movie = await movieRepository.GetMovie(id);
+            var rating = await movieRepository.GetRating(id);
             movieViewModel.Movie = movie;
             movieViewModel.Ratings = rating;
             return View(movieViewModel);
         }
     }
-    //TODO: hämta den specifika filmen man klickat på och lägga in den i detail page. Endpoint har ett id som matchar filmens id. Går det att plocka ut det?
 }

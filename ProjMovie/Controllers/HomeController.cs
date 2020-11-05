@@ -21,11 +21,16 @@ namespace ProjMovie.Controllers
         
         public async Task<IActionResult> Index()
         {
-            var toplist = GetRatedMovies().Result; //kolla upp var .Result gör
+            var toplist = await movieRepository.GetTopList(); 
             var model = await GetMovieList(toplist);
             return View(model);
         }
 
+        /// <summary>
+        /// Hämtar en lista av MovieViewModels baserat på en lista av RatedMoviesDTOs
+        /// </summary>
+        /// <param name="ratedMoviesList"></param>
+        /// <returns></returns>
         private async Task<List<MovieViewModel>> GetMovieList(List<RatedMoviesDTO> ratedMoviesList)
         {
             List<MovieViewModel> movList = new List<MovieViewModel>();
@@ -39,11 +44,6 @@ namespace ProjMovie.Controllers
                 movList.Add(homeViewModel);
             }
             return movList;
-        }
-
-        private async Task<List<RatedMoviesDTO>> GetRatedMovies()
-        {
-            return await movieRepository.GetTopList();
         }
     }
 }
