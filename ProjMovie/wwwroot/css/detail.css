@@ -27,15 +27,11 @@ header {
 }
 
 .single-movie {
-    width: 75%;
+    width: 320px;
     position: relative;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 40px;
-}
-
-.single-movie img {
-    width: 100%;
 }
 
 /*RATE STYLING*/
@@ -89,17 +85,26 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3.5%;
 }
 
 .movie-info-column1 {
-    padding-right: 4%;
+    margin: 3.5%;
+    float: left;
+}
+
+.movie-info-column2 {
+    margin: 3.5%;
+    float: right;
 }
 
 .single-movie-info {
     color: white;
     text-align: justify;
-    font-size: 0.85rem;
+    font-size: 13px;
+}
+
+.single-movie-info span {
+    font-size: 11px;
 }
 
 .accordion {
@@ -121,7 +126,7 @@ header {
     min-height: 2.5rem;
     line-height: 1.25rem;
     font-weight: bold;
-    font-size: 1.05rem;
+    font-size: 14px;
     display: flex;
     align-items: center;
     position: relative;
@@ -130,7 +135,7 @@ header {
 
 .accordion-item-header::after {
     content: "\25BE";
-    font-size: 2.5rem;
+    font-size: 14px;
     position: absolute;
     right: 1.5rem;
     transition: transform 0.2s ease-in-out;
@@ -153,6 +158,7 @@ header {
     border-top: 1px solid;
     border-image: linear-gradient(to right #008f68, #fae042) 1;
     text-align: justify;
+    font-size: 11px;
 }
 
 /*MEDIA QUERIES*/
@@ -163,29 +169,29 @@ header {
 }
 
 .single-movie {
-    width: 40%;
-    height: 40%;
-}
-
-.flex-container {
-    margin: 4%;
+    width: 500px;
 }
 
 .single-movie-info {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
-.movie-info-column1 {
-    padding-right: 15%;
+.single-movie-info span{
+    font-size: 14px;
 }
 
 .accordion-item-header {
     padding: 1rem 4rem 0.5rem 13rem;
-    font-size: 1.25rem;
+    font-size: 18px;
 }
 
 .accordion-item-header::after {
-    font-size: 3rem;
+    font-size: 18px;
     right: 12rem;
 }
+
+.accordion-item-body-content {
+    font-size: 14px;
+}
+
 }
