@@ -131,7 +131,7 @@ header {
 
 .search-box:hover {
     width: 200px;
-    background: #2f3640;
+    background: rgb(68, 10, 37);
 }
 
 .search-box:focus-within {
