@@ -19,16 +19,16 @@ function apiSearch(ev) {
             
             if (data.Response === "True") {
                 document.getElementById('first').innerHTML = data.Search[0].Title
-                document.getElementById('firstLink').href = "https://localhost:44322/Detail/Index/" + data.Search[0].imdbID //TODO: måste väl gå att länka på ett bättre sätt?
+                document.getElementById('firstLink').href = "/Detail/Index/" + data.Search[0].imdbID
 
                 document.getElementById('second').innerHTML = data.Search[1].Title
-                document.getElementById('secondLink').href = "https://localhost:44322/Detail/Index/" + data.Search[1].imdbID
+                document.getElementById('secondLink').href = "/Detail/Index/" + data.Search[1].imdbID
 
                 document.getElementById('third').innerHTML = data.Search[2].Title
-                document.getElementById('thirdLink').href = "https://localhost:44322/Detail/Index/" + data.Search[2].imdbID
+                document.getElementById('thirdLink').href = "/Detail/Index/" + data.Search[2].imdbID
 
                 document.getElementById('fourth').innerHTML = data.Search[3].Title
-                document.getElementById('fourthLink').href = "https://localhost:44322/Detail/Index/" + data.Search[3].imdbID
+                document.getElementById('fourthLink').href = "/Detail/Index/" + data.Search[3].imdbID
             }
             else {
 
