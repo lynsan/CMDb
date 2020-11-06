@@ -36,8 +36,17 @@ namespace ProjMovie.Data
         {
             EndPoint = $"{baseUrl}?i={movID}&plot=full{apiKey}";
             var result = await ApiRequest<MovieDTO>();
-            var obj = BreakOutPlots(result);
-            return (MovieDTO)obj;
+
+            try
+            {
+                var obj = BreakOutPlots(result);
+                return (MovieDTO)obj;
+            }
+            catch (Exception)
+            {
+                result.Plot = "Movie plot not found";
+                return result;
+            }
         }
 
         /// <summary>
