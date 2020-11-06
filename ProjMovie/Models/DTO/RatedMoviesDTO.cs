@@ -8,7 +8,8 @@ namespace ProjMovie.Models.DTO
     public class RatedMoviesDTO
     {
         public string ImdbId { get; set; }
-        public string NumberOfLikes { get; set; }
-        public string NumberOfDislikes { get; set; }
+        public int NumberOfLikes { get; set; }
+        public int NumberOfDislikes { get; set; }
+        public int Rating { get; set; }
     }
 }

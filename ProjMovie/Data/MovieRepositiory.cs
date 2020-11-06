@@ -72,9 +72,10 @@ namespace ProjMovie.Data
             if(result == null)
             {
                 result = new RatedMoviesDTO();
-                result.NumberOfLikes = "0";
-                result.NumberOfDislikes = "0";
+                result.NumberOfLikes = 0;
+                result.NumberOfDislikes = 0;
             }
+            result.Rating = result.NumberOfLikes - result.NumberOfDislikes;
 
             return result;
         }
