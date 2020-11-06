@@ -66,7 +66,7 @@
             </div>
             <div class="accordion">
                 <div class="accordion-item">
-                    <div class="accordion-item-header" onclick="ShowInfo()">
+                    <div class="accordion-item-header">
                         Plot
                     </div>
                     <div class="accordion-item-body">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <div class="accordion-item-header" onclick="ShowInfo()">
+                    <div class="accordion-item-header">
                         Actors
                     </div>
                     <div class="accordion-item-body">
@@ -86,6 +86,22 @@
                     </div>
                 </div>
             </div>
+            <script>
+                 const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+                        accordionItemHeaders.forEach(accordionItemHeader => {
+                            accordionItemHeader.addEventListener("click", event => {
+                                accordionItemHeader.classList.toggle("active");
+                                const accordionItemBody = accordionItemHeader.nextElementSibling;
+                                if (accordionItemHeader.classList.contains("active")) {
+                                    accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+                                }
+                                else {
+                                    accordionItemBody.style.maxHeight = 0;
+                                }
+                            });
+                        });
+            </script>
         </div>
         <footer>
             <ul class="footer-links">
