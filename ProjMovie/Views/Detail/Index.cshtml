@@ -10,11 +10,14 @@
     <script src="~/js/main.js"></script>
 </head>
 <body>
+    <header>
+        <a href = "https://localhost:44322/"> <!--TODO: Måste väl gå att länka på ett bättre sätt?-->
+            <h1>CMDb</h1>
+        </a>
+    </header>
     <div class="content-wrapper">
         <div class="content">
-            <header>
-                <h1>CMDb</h1>
-            </header>
+
             <h2 class="detail-movie-title">@Model.Movie.Title</h2>
             <div class="single-movie">
                 <img src="@Model.Movie.Poster" alt="Movie">
@@ -87,20 +90,20 @@
                 </div>
             </div>
             <script>
-                 const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+                const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
-                        accordionItemHeaders.forEach(accordionItemHeader => {
-                            accordionItemHeader.addEventListener("click", event => {
-                                accordionItemHeader.classList.toggle("active");
-                                const accordionItemBody = accordionItemHeader.nextElementSibling;
-                                if (accordionItemHeader.classList.contains("active")) {
-                                    accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-                                }
-                                else {
-                                    accordionItemBody.style.maxHeight = 0;
-                                }
-                            });
-                        });
+                accordionItemHeaders.forEach(accordionItemHeader => {
+                    accordionItemHeader.addEventListener("click", event => {
+                        accordionItemHeader.classList.toggle("active");
+                        const accordionItemBody = accordionItemHeader.nextElementSibling;
+                        if (accordionItemHeader.classList.contains("active")) {
+                            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+                        }
+                        else {
+                            accordionItemBody.style.maxHeight = 0;
+                        }
+                    });
+                });
             </script>
         </div>
         <footer>

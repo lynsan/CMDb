@@ -13,6 +13,10 @@ header {
     display: flex;
     padding: 10px;
 }
+header a{
+    text-decoration: none;
+    color: white;
+}
 
 .content-wrapper {
     display: flex;
@@ -22,6 +26,8 @@ header {
 
 .content {
     flex-grow: 1;
+    max-width: 1024px;
+    margin: auto;
 }
 
 

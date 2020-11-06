@@ -16,7 +16,7 @@ function apiSearch(ev) {
         .then((res) => res.json())
         .then((data) => {
 
-
+            
             if (data.Response === "True") {
                 document.getElementById('first').innerHTML = data.Search[0].Title
                 document.getElementById('firstLink').href = "Detail/Index/" + data.Search[0].imdbID
