@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+.search-result {
+    border: solid 3px;
+    border-color: rgb(68, 10, 37);
+    margin: 10% 5% 0 5%;
+    overflow: auto;
+    float: left;
+    color: #fff;
+    justify-content: center;
+    align-content: center;
+    text-align: justify;
+}
+
+.search-result img {
+    width: 30%;
+    float: left;
+    margin: 2% 5% 2% 2%;
+}
+
+.search-result h1 {
+    font-size: 20px;
+}
+
+.search-result span {
+    display: block;
+}
+
+/*MEDIA QUERIES*/
+@media only screen and (min-width: 768px) {
+
+.search-result {
+    margin: 10% 2% 0 2%;
+}
+
+.search-result img {
+    width: 20%;
+}
+
+.search-result h1 {
+    font-size: 30px;
+}
+}
