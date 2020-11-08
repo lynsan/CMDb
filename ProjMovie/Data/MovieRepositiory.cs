@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using ProjMovie.Models.DTO;
+using ProjMovie.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,27 @@ namespace ProjMovie.Data
             apiKey = configuration.GetValue<string>("OMDbApi:ApiKey");
             baseUrl2 = configuration.GetValue<string>("CMDbApi:BaseUrl2");
         }
+
+        /// <summary>
+        /// Getting a searchDTO from search string and converting to list of MovieViewModels
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public async Task<List<MovieViewModel>> Search(string search)
+        {
+            EndPoint = $"{baseUrl}?s={search}{apiKey}";
+            var result = await ApiRequest<SearchDTO>();
+            List<MovieViewModel> movList = new List<MovieViewModel>();
+            foreach (var movie in result.Search)
+            {
+                MovieViewModel movieViewModel = new MovieViewModel();
+                movieViewModel.Movie = await GetMovie(movie.ImdbID);
+                movieViewModel.Ratings = await GetRating(movie.ImdbID);
+                movList.Add(movieViewModel);
+            }
+            return movList;
+        }
+
 
         /// <summary>
         /// Hämtar en film av ett visst id från OMDb
