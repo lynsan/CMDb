@@ -43,6 +43,13 @@ function apiSearch(ev) {
         .catch((err) => console.log(err))
 }
 
+function searchPageRoute() {
+    var input = document.getElementById('search-txt').value;
+    var base = "/Search/Index/"
+    window.location = base + input;
+}
+
+
 function ReadMore(ev) {
     const btn = ev.target;
     const dots = btn.parentElement.closest('.movie-plot').querySelector('.dots');

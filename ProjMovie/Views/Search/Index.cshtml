@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CMDB movieProject</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="~/css/main.css" rel="stylesheet" />">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="~/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("", "Home")">
+            <h1>CMDb</h1>
+        </a>
+    </header>
+    <div class="content-wrapper">
+        <div class="content">
+
+
+
+
+            <div class="search-box" id="search-box">
+                <input id="search-txt" class="search-txt" type="text" placeholder="Search" oninput="search(event)">
+                <a class="search-btn" href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+                <ul id="result-list">
+                    <li>
+                        <a id="firstLink" href="#">
+                            <div id="first"></div>
+                        </a>
+                    </li>
+                    <li class="collapse">
+                        <a id="secondLink" href="#">
+                            <div id="second"></div>
+                        </a>
+                    </li>
+                    <li class="collapse">
+                        <a id="thirdLink" href="#">
+                            <div id="third"></div>
+                        </a>
+                    </li>
+                    <li class="collapse">
+                        <a id="fourthLink" href="#">
+                            <div id="fourth"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--Content-->
+
+
+
+        </div>
+        <footer>
+            <ul class="footer-links">
+                <li>
+                    <a href="#">
+                        <div class="logo">
+                            <img src="/Images/FacebookBW.jpg" alt="facebook">
+                        </div>
+                        <div class="hover-img">
+                            <img src="/Images/FacebookColor.jpg" alt="facebook">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="logo" src="/Images/InstagramBW.jpg" alt="instagram">
+                        <img class="hover-img" src="/Images/InstagramColor.jpg" alt="instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="logo" src="/Images/TwitterBW.jpg" alt="twitter">
+                        <img class="hover-img" src="/Images/twitterColor.jpg" alt="twitter">
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright"><b>&copy; 2020 CMDb</b></p>
+        </footer>
+    </div>
+</body>
+</html>
