@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <a href = "@Url.Action("", "Home")"> <!--TODO: Måste väl gå att länka på ett bättre sätt?-->
+        <a href = "@Url.Action("", "Home")"> 
             <h1>CMDb</h1>
         </a>
     </header>
@@ -22,7 +22,7 @@
 
             <div class="search-box" id="search-box">
                 <input id="search-txt" class="search-txt" type="text" placeholder="Search" oninput="search(event)">
-                <a class="search-btn" href="#">
+                <a class="search-btn" href="#" onclick="searchPageRoute()">
                     <i class="fas fa-search"></i>
                 </a>
                 <ul id="result-list">
@@ -50,7 +50,7 @@
             </div>
             <h2 class="detail-movie-title">@Model.Movie.Title</h2>
             <div class="single-movie">
-                <img src="@Model.Movie.Poster" alt="Movie">
+                <img src="@Model.Movie.Poster" alt="Movie poster"  onerror="this.onerror=null; this.src='/Images/poster.jpg'">
             </div>
             <div class="rate">
                 <ul class="ratings">

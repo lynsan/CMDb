@@ -5,7 +5,7 @@
     <title>CMDB movieProject</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />">
     <link href="~/css/search.css" rel="stylesheet" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="~/js/main.js"></script>
@@ -21,7 +21,7 @@
 
             <div class="search-box" id="search-box">
                 <input id="search-txt" class="search-txt" type="text" placeholder="Search" oninput="search(event)">
-                <a class="search-btn" href="#">
+                <a class="search-btn" href="#" onclick="searchPageRoute()">
                     <i class="fas fa-search"></i>
                 </a>
                 <ul id="result-list">
@@ -47,21 +47,27 @@
                     </li>
                 </ul>
             </div>
-            <!--Content-->
-            <div class="search-result">
-                <img src="~/Images/poster.jpg" alt="Movie poster"/>
-                <div>
-                    <h1>Movie Title</h1>
-                    <span>Short plot</span>
-                    <span>Year</span>
-                    <span>Language</span>
-                    <span>Runtime</span>
-                    <span>Rating</span>
-                    <span>Read more</span>
-                </div>
-            </div>
+            <ul class="search-list">
+                @foreach (var film in Model)
+                {
 
-
+                    <li>
+                        <a href="/Detail/Index/@film.Movie.ImdbID">
+                            <div class="search-item">
+                                <img src="@film.Movie.Poster" alt="Movie poster" onerror="this.onerror=null; this.src='/Images/poster.jpg'">
+                                <div class="mov-info">
+                                    <h1>@film.Movie.Title</h1>
+                                    <p>Year: @film.Movie.Year</p>
+                                    <p>Runtime: @film.Movie.Runtime</p>
+                                    <p>Language: @film.Movie.Language</p>
+                                    <p>Genre: @film.Movie.Genre</p>
+                                    <p>Rating: @film.Ratings.Rating</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
         </div>
         <footer>
             <ul class="footer-links">

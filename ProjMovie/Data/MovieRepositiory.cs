@@ -30,7 +30,7 @@ namespace ProjMovie.Data
         }
 
         /// <summary>
-        /// Getting a searchDTO from search string and converting to list of MovieViewModels
+        /// Hämtar en searchDTO från en söksträng och konverterar den till lista av MovieViewModels
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>

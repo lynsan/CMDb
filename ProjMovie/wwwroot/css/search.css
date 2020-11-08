@@ -1,43 +1,62 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
-
-.search-result {
-    border: solid 3px;
-    border-color: rgb(68, 10, 37);
-    margin: 10% 5% 0 5%;
-    overflow: auto;
-    float: left;
-    color: #fff;
-    justify-content: center;
-    align-content: center;
-    text-align: justify;
+.search-item img {
+    width: 150px;
+    padding: 2%;
+    margin-right: 10px;
 }
 
-.search-result img {
-    width: 30%;
-    float: left;
-    margin: 2% 5% 2% 2%;
+.search-item {
+    border: 3px solid rgb(68, 10, 37);
+    display: flex;
 }
 
-.search-result h1 {
-    font-size: 20px;
+.search-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.search-result span {
-    display: block;
+.search-item .mov-info {
+    text-align: left;
+    margin-right: 10px;
+    width: 50vw;
+}
+
+.search-list li {
+    margin: 10px;
+}
+
+    .search-list li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .search-list li:first-child {
+        margin-top: 50px;
+    }
+
+    .search-list li:last-child {
+        margin-bottom: 50px;
+    }
+
+.search-item:hover {
+    Background: rgb(68, 10, 37);
+}
+
+.mov-info p {
+    font-size: 12px;
+}
+
+.mov-info h1 {
+    font-size: 16px;
 }
 
 /*MEDIA QUERIES*/
 @media only screen and (min-width: 768px) {
+    .mov-info p {
+        font-size: 14px;
+    }
 
-.search-result {
-    margin: 10% 2% 0 2%;
-}
-
-.search-result img {
-    width: 20%;
-}
-
-.search-result h1 {
-    font-size: 30px;
-}
+    .mov-info h1 {
+        font-size: 18px;
+    }
 }
