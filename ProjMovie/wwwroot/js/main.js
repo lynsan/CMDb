@@ -11,6 +11,7 @@ function search(ev) {
 function apiSearch(ev) {
     var omdbUrl = 'https://www.omdbapi.com/?apikey=aa247f46&s='
     var searchText = ev.target.value
+    searchText = searchText.trim();
 
     fetch(omdbUrl + searchText)
         .then((res) => res.json())
@@ -31,8 +32,8 @@ function apiSearch(ev) {
                 document.getElementById('fourthLink').href = "/Detail/Index/" + data.Search[3].imdbID
             }
             else {
-
                 document.getElementById('first').innerHTML = "Search not found!"
+                document.getElementById('firstLink').href = "#"
                 document.getElementById('second').innerHTML = ""
                 document.getElementById('third').innerHTML = ""
                 document.getElementById('fourth').innerHTML = ""
@@ -45,8 +46,12 @@ function apiSearch(ev) {
 
 function searchPageRoute() {
     var input = document.getElementById('search-txt').value;
-    var base = "/Search/Index/"
-    window.location = base + input;
+    input = input.trim();
+    if (input !== "" && document.getElementById('first').innerHTML != "Search not found!") {
+        var base = "/Search/Index/"
+        window.location = base + input;
+    }
+    
 }
 
 

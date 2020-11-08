@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ProjMovie.Data;
+using ProjMovie.Models.ViewModels;
 
 namespace ProjMovie.Controllers
 {
     public class SearchController : Controller
     {
-        public IActionResult Index(string search)
+        private IMovieRepository movieRepository;
+        public SearchController(IMovieRepository movieRepository)
         {
+            this.movieRepository = movieRepository;
+        }
 
-            return View();
+        public async Task<IActionResult> Index(string id)
+        {
+            var model = await movieRepository.Search(id);
+            return View(model);
         }
     }
 }
